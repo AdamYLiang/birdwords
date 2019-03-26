@@ -1,0 +1,22 @@
+<form class="signup-form" action="<%= users_url %>" method="POST">
+    <div>
+        <div>
+            <%= image_tag "bird-words.jpg" %>
+        </div>
+        <div class="header">
+            <h2>Sign Up</h2>
+            <div class="caption">for Bird Words</div>
+        </div>
+    </div>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label for="name">Name:
+        <input type="text" id="name" name="user[name]" value="">
+    </label>
+    <label for="password">Password: 
+        <input type="password" id="password" name="user[password]" value="">
+    </label>
+    <label for="birth_year">Birth Date:
+        <input type="date" id="birth_year" name="user[birth_year]" value="">
+    </label>
+    <input type="submit" value="SIGN UP">
+</form>

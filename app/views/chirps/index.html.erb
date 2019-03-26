@@ -1,0 +1,13 @@
+<h1>All the chirps!!!</h1>
+
+<ul>
+    <% @chirps.each do |chirp| %>
+    <% # Very easy to n + 1 in the views %>
+        <li>
+            <%= chirp.author.name %> 
+            - 
+            <a href="<%= chirp_url(chirp) %>"><%= chirp.body %></a>
+        </li>
+        
+    <% end %>
+</ul>

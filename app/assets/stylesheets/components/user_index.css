@@ -1,0 +1,10 @@
+.user-index {
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  margin-left: 20px;
+}
+
+.user-index-item {
+  cursor: pointer;
+}

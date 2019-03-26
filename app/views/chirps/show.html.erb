@@ -1,0 +1,16 @@
+<h1>One Single Chirp</h1>
+
+<li>
+    <%= @chirp.author.name %>
+    - 
+    <%= @chirp.body %>
+</li>
+<br>
+<% # Buttons are just html forms %>
+<form action="<%= chirp_url(@chirp) %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Destroy this Chirp">
+</form>
+
+<% # All a tags are GET requests %>
+<a href="<%= chirps_url %>">Back to Index</a>

@@ -1,0 +1,38 @@
+<% # _form naming convention is important. %>
+<% # Also needs to be located in the appropriate sub directory %>
+<% # Alternative if you pass in a edit flag to the partial %>
+<% # if edit %>
+    <% # action = chirp_url(chirp) %>
+    <% # button_text = "Edit this Chirp" %>
+<% # else %>
+    <% # action = chirps_url %>
+    <% # button_text = "Create Chirp" %>
+<% # end %>
+
+<% # persisted? checks to see if the receiving object is in the DB %>
+<% action = chirp.persisted? ? chirp_url(chirp) : chirps_url %>
+<% button_text = chirp.persisted? ? "Edit this Chirp" : "Create Chirp" %>
+
+<form action="<%= action %>" method="POST">
+    <% # the method of the form must be post %>
+    <% # To get around this, we use a hidden input to specify the method with a name of '_method' %>
+    <% # Rails interprets the hidden value for us because of the _method key %>
+
+    <% #authenticity token check, for CSRF. We need this for every form %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <% if chirp.persisted? %>
+        <input type="hidden" name="_method" value="PATCH">
+    <% end %>
+    
+    <label for="chirp_body">Body:
+        <input 
+            type="text"
+            name="chirp[body]"
+            id="chirp_body"
+            value="<%= chirp.body %>"
+        >
+    </label>
+
+    <input type="submit" value="<%= button_text %>">
+</form>

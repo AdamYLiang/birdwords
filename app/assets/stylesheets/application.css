@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body > img {
+  display: block;
+  margin: auto;
+}
+
+body > h1 {
+  text-align: center;
+}
+
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid lightcoral;
+  border-radius: 7px;
+  width: 500px;
+  margin: 30px auto;
+  align-items: center;
+  padding: 30px;
+  font-family: sans-serif;
+  background-color: whitesmoke;
+}
+
+img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.signup-form > div {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.signup-form .caption {
+  color: lightcoral;
+}
+
+.signup-form .header > h2 {
+  color: darkred;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 20px;
+}
+
+.signup-form input {
+    width: 60%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.signup-form label {
+    margin-bottom: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: maroon;
+    font-weight: 550;
+}
+
+input[type="submit"] {
+    background-color: red;
+    color: white;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px 0 grey;
+    width: fit-content;
+    padding: 20px 30px;
+}

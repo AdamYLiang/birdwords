@@ -1,0 +1,11 @@
+<% # Forms have an action and a method %>
+<% # Action: A path %>
+<% # Method: HTTP Verb %>
+<% # Forms must have input fields to receive information %>
+<% # Forms must also have a button to submit the information %>
+
+<% # Forms default to a POST action, and cannot be directly changed %>
+<% # Action needs to be the url we want to send the info to. %>
+<h1>New Chirp</h1>
+
+<%= render "form", chirp: @chirp %>

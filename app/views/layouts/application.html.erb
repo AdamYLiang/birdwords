@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BirdWords</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Birdwords!</h1>
+    <%= image_tag "bird-words.jpg" %>
+  
+
+    <% # This yield produces whichever html template we specified in our contoller %>
+    <%= yield %>
+  </body>
+</html>
+
+<!--    
+  <% if logged_in? %>
+      <h1><%= current_user.name %></h1>
+      <form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Logout">
+      </form>
+    <% else %>
+      <a href="<%= new_session_url %>">Login</a>
+      <a href="<%= new_user_url %>">Signup</a>
+    <% end %>
+
+    <% #We want to loop through our errors and show them up as a list %>
+    <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |error| %>
+          <li><%= error %></li>
+        <% end%>
+      </ul>
+    <% end %>
+-->
